@@ -803,3 +803,16 @@ variable "adot_collector_nginx_helm_config" {
   type        = any
   default     = {}
 }
+
+#-----------Atlantis-------------
+variable "enable_atlantis" {
+  description = "Enable atlantis"
+  type        = bool
+  default     = false
+}
+
+variable "atlantis_helm_config" {
+  description = "Atlantis Helm Chart config"
+  type        = any
+  default     = {}
+}

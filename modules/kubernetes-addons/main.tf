@@ -183,6 +183,7 @@ module "ingress_nginx" {
   addon_context     = local.addon_context
 }
 
+
 module "karpenter" {
   count                     = var.enable_karpenter ? 1 : 0
   source                    = "./karpenter"
@@ -214,6 +215,14 @@ module "metrics_server" {
   count             = var.enable_metrics_server ? 1 : 0
   source            = "./metrics-server"
   helm_config       = var.metrics_server_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  addon_context     = local.addon_context
+}
+
+module "atlantis" {
+  count             = var.enable_atlantis ? 1 : 0
+  source            = "./atlantis"
+  helm_config       = var.atlantis_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
 }
