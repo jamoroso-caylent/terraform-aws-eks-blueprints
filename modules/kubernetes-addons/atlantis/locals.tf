@@ -5,7 +5,7 @@ locals {
     name        = local.name
     chart       = local.name
     repository  = "https://runatlantis.github.io/helm-charts"
-    version     = "atlantis-4.0.3"
+    version     = "4.0.3"
     namespace   = "kube-system"
     description = "Atlantis helm Chart deployment configuration"
     values      = []
