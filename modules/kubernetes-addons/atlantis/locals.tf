@@ -9,7 +9,7 @@ locals {
     namespace   = "kube-system"
     description = "Atlantis helm Chart deployment configuration"
     values      = []
-    timeout     = "1200"
+    timeout     = "360"
   }
 
   helm_config = merge(
