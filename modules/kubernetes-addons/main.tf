@@ -223,10 +223,8 @@ module "atlantis" {
   count             = var.enable_atlantis ? 1 : 0
   source            = "./atlantis"
   helm_config       = var.atlantis_helm_config
-  manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
 }
-
 module "ondat" {
   count             = var.enable_ondat ? 1 : 0
   source            = "ondat/ondat-addon/eksblueprints"
