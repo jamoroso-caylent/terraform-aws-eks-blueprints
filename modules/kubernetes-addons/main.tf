@@ -222,6 +222,7 @@ module "metrics_server" {
 module "atlantis" {
   count             = var.enable_atlantis ? 1 : 0
   source            = "./atlantis"
+  manage_via_gitops = var.argocd_manage_add_ons
   helm_config       = var.atlantis_helm_config
   addon_context     = local.addon_context
 }
