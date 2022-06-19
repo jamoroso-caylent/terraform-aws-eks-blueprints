@@ -819,7 +819,7 @@ variable "atlantis_helm_config" {
 
 #-----------AWS Csi Provider-------------
 
-variable "enable_csi_secrets_store_provider_aws" {
+variable "enable_csi_secrets_store_provider" {
   description = "Enable AWS secrets CSI Provider"
   type        = bool
   default     = false
