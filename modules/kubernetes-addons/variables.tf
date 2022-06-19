@@ -816,3 +816,17 @@ variable "atlantis_helm_config" {
   type        = any
   default     = {}
 }
+
+#-----------AWS Csi Provider-------------
+
+variable "enable_csi_secrets_store_provider_aws" {
+  description = "Enable AWS secrets CSI Provider"
+  type        = bool
+  default     = false
+}
+
+variable "csi_secrets_store_provider_aws_helm_config" {
+  description = "AWS secrets CSI Provider Helm Chart config"
+  type        = any
+  default     = {}
+}

@@ -225,6 +225,14 @@ module "atlantis" {
   helm_config       = var.atlantis_helm_config
   addon_context     = local.addon_context
 }
+
+module "csi_secrets_store_provider_aws" {
+  count             = var.enable_csi_secrets_store_provider_aws ? 1 : 0
+  source            = "./aws-csi-secrets-provider"
+  helm_config       = var.csi_secrets_store_provider_aws_helm_config
+  addon_context     = local.addon_context
+}
+
 module "ondat" {
   count             = var.enable_ondat ? 1 : 0
   source            = "ondat/ondat-addon/eksblueprints"

@@ -8,6 +8,7 @@ locals {
   argocd_addon_config = {
     agones                    = var.enable_agones ? module.agones[0].argocd_gitops_config : null
     # atlantis                  = var.enable_atlantis ? module.atlantis[0].argocd_gitops_config : null
+    awsCsiProvider            = var.enable_csi_secrets_store_provider_aws ? module.csi_secrets_store_provider_aws[0].argocd_gitops_config : null
     awsEfsCsiDriver           = var.enable_aws_efs_csi_driver ? module.aws_efs_csi_driver[0].argocd_gitops_config : null
     awsForFluentBit           = var.enable_aws_for_fluentbit ? module.aws_for_fluent_bit[0].argocd_gitops_config : null
     awsLoadBalancerController = var.enable_aws_load_balancer_controller ? module.aws_load_balancer_controller[0].argocd_gitops_config : null
