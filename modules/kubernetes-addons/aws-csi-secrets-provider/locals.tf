@@ -8,7 +8,7 @@ locals {
     version     = "0.0.3,"
     namespace   = "kube-system"
     timeout     = "1200"
-    values      = local.default_helm_values
+    values      = []
     description = "AWS Secrets Manager and Config Provider for Secret Store CSI Driver"
   }
 
