@@ -6,7 +6,7 @@ locals {
     chart       = local.name
     repository  = "https://runatlantis.github.io/helm-charts"
     version     = "4.0.3"
-    namespace   = "kube-system"
+    namespace   = local.name
     description = "Atlantis helm Chart deployment configuration"
     values      = []
     timeout     = "360"
