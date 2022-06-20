@@ -8,6 +8,13 @@ module "helm_addon" {
   depends_on = [kubernetes_namespace_v1.this]
 }
 
+resource "aws_iam_policy" "atlantis" {
+  name        = "${var.addon_context.eks_cluster_id}-atlantis"
+  description = "IAM Policy for Atlantis"
+  policy      = data.aws_iam_policy_document.atlantis.json
+}
+
+
 resource "kubernetes_namespace_v1" "this" {
   count = local.helm_config["namespace"] == "kube-system" ? 0 : 1
 
