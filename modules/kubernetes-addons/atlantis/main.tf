@@ -15,13 +15,13 @@ resource "aws_iam_policy" "atlantis" {
 }
 
 
-resource "kubernetes_namespace_v1" "this" {
-  count = local.helm_config["namespace"] == "kube-system" ? 0 : 1
+# resource "kubernetes_namespace_v1" "this" {
+#   count = local.helm_config["namespace"] == "kube-system" ? 0 : 1
 
-  metadata {
-    name = local.helm_config["namespace"]
-    labels = {
-      "app.kubernetes.io/managed-by" = "terraform-aws-eks-blueprints"
-    }
-  }
-}
+#   metadata {
+#     name = local.helm_config["namespace"]
+#     labels = {
+#       "app.kubernetes.io/managed-by" = "terraform-aws-eks-blueprints"
+#     }
+#   }
+# }

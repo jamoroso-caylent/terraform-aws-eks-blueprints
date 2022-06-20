@@ -1,6 +1,6 @@
 locals {
   name = "atlantis"
-  service_account_name = "karpenter"
+  service_account_name = "atlantis"
   eks_cluster_endpoint = var.addon_context.aws_eks_cluster_endpoint
 
   set_values = [{
