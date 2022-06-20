@@ -24,3 +24,9 @@ variable "addon_context" {
     tags                           = map(string)
   })
 }
+
+variable "irsa_policies" {
+  description = "Additional IAM policies for a IAM role for service accounts"
+  type        = list(string)
+  default     = []
+}
