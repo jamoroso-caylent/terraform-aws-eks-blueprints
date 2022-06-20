@@ -5,7 +5,6 @@ module "helm_addon" {
   irsa_config       = local.irsa_config
   addon_context     = var.addon_context
 
-  depends_on = [kubernetes_namespace_v1.this]
 }
 
 resource "aws_iam_policy" "atlantis" {
